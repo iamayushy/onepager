@@ -192,6 +192,8 @@
     }
 
     
+
+    
     //the trigger function
     function start() {
         if (!interval) {
@@ -222,9 +224,14 @@
     //The button functions
     function OnStart() {
         start();
+        if(timer === 0){
+            stop();
+        }
+        else{
+
         timer--;
         timeSetter();
-
+        }
     }
 
     function OnStop() {
