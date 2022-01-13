@@ -3,4 +3,6 @@
 
 <h2>1. A Simple Stopwatch.</h2>
 <p>This Is Just a simple implementation of setInterval.</p>
+<p>Here is the simple look 👇</p>
+<a href = "https://iamayushy.github.io/onepager/stopwatch/stopwatch.html">stopwatch</a>
 
