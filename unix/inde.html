@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linus</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+       .holder{
+           margin: auto;
+           margin-top: 40px;
+       }
+       
+      .linuxholder{
+          border: 1px solid black;
+          text-align: center;
+          padding: 20px;
+          width: 500px;
+          background-color: rgb(255, 212, 174);
+      }
+      .lname{
+          font-size: 0.7cm;
+          font-weight: 700;
+          color: blue;
+      }
+      .ltext{
+          font-size: 0.6cm;
+          
+      }
+      .sal{
+          /* border: 1px solid salmon; */
+          display: flex;
+          padding: 10px;
+          width: 800px;
+          
+
+      }
+      .simage{
+          width: 130px;
+          margin: 10px;
+      }
+      .sname{
+          font-size: 0.6cm;
+          font-weight: 600;
+          color: red
+      }
+      .stext{
+          font-size: large;
+          font-weight: 600;
+      }
+      .auth{
+          /* border:  1px solid green; */
+          display: flex;
+          justify-content: space-evenly;
+          width: 900px;
+          background-color: orange;
+      }
+      .line{
+          width: 10px;
+          height: 120px;
+          background-color: white;
+          border-radius: 10px;
+      }
+      .right{
+          text-align: end;
+      }
+      .left{
+          width: 400px;
+      }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="holder linuxholder">
+            <img src="linus.jpg" alt="">
+            <p class="lname">Linus Torvalds</p>
+            <p class="ltext">The creator of the Linux and Git</p>
+        </div>
+        <div class="holder sal">
+            <section id="image">
+                <img class="simage" src="khan.jpg" alt="">
+            </section>
+            <section id="about">
+                <p class="sname">Sal Khan</p>
+
+                <p class="stext">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                     Quibusdam, aut! Lorem ipsum dolor sit amet.</p>
+            </section>
+        </div>
+        <div class="holder sal  auth">
+            <section class="left author">
+                <p class="authorname">Ken Thompson</p>
+                <p class="authtext">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, inventore.
+
+                </p>
+            </section>
+            <section class="line"></section>
+            <section class="right author">
+                <p class="authorname">Dennis Ritchie</p>
+                <p class="authtext">Lorem ipsum dolor sit amet. Lorem, ipsum dolor.</p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
