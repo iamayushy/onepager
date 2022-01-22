@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: rgb(204, 229, 250);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 100px;
+
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            gap: 5%;
+            justify-content: center;
+            margin: 50px;
+        }
+
+        #holder {
+            background-color: rgb(247, 219, 184);
+            text-align: center;
+            width: 200px;
+            /* border: 1px solid black; */
+            margin-bottom: 40px;
+            font-size: larger;
+            border-radius: 10px;
+            height: 100px;
+            padding: 10px;
+
+
+        }
+
+        #holder:hover {
+            box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+            border: 1px solid blueviolet;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+        }
+
+        #check {
+            background-color: saddlebrown;
+        }
+
+        input[type="submit"] {
+            width: 200px;
+            height: 50px;
+            background-color: blueviolet;
+            border: 1px solid blueviolet;
+            font-size: x-large;
+            color: white;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            border-radius: 10px;
+
+        }
+
+        input[type="submit"]:hover {
+            background-color: black;
+            border: 3px solid rgb(247, 219, 184);
+
+        }
+
+        section {
+            margin: 0 auto;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            height: 30px;
+            outline: none;
+            border: 1px solid blueviolet;
+            border-radius: 10px;
+            font-size: large;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form>
+        <section> <input type="text" id="task" placeholder="add your task">
+            <input type="checkbox" name="check" id="check">
+        </section>
+
+        <input type="submit" value="ADD" id="addme">
+    </form>
+    <div id="container">
+
+    </div>
+</body>
+
+</html>
+<script>
+    var url = "https://json-server-mocker-masai.herokuapp.com/tasks";
+    let container = document.getElementById("container");
+    var add = document.querySelector("#addme");
+    var check = document.getElementById("check");
+    var tasks = document.querySelector("#task");
+    check.addEventListener('click', checkme);
+
+    let payload = {};
+    function checkme() {
+        fetch(url, {
+            method: 'POST'
+        })
+        if (check.checked === true) {
+            // console.log("Done");
+            // console.log(tasks.value)
+            payload.title = tasks.value;
+            payload.status = check.checked;
+            console.log(payload)
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+
+            })
+                .then(res => res.json())
+                .then(res => console.log(res))
+        }
+        else {
+            alert("Not Ckecked")
+        }
+    }
+
+    //get api;
+    fetch(url)
+        .then(Response => Response.json())
+        .then(data => {
+            console.log(data[0].title);
+            update(data);
+
+        })
+
+    add.addEventListener("click", update);
+    function update(show) {
+        show.forEach(element => {
+            let t = element.title;
+            if (t !== undefined) {
+                let box = document.createElement('div');
+                box.id = "holder"
+                let assign = document.createElement('p');
+                assign.id = "asgn";
+                assign.textContent = t;
+
+                box.append(assign);
+                container.append(box)
+
+            }
+
+        });
+
+
+    }
+
+
+
+
+</script>
