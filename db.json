@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "Book": "Harry Porter",
+      "author": "JK Rowling",
+      "comments": [
+        "Nice Book",
+        "Epic Story"
+      ],
+      "id": 1
+    },
+    {
+      "Book": "Robert Kiyoski",
+      "author": "Porr Man Rich Man",
+      "comments": [
+        "very good book"
+      ],
+      "id": 2
+    },
+    {
+      "Book": "Lemain",
+      "author": "Sivale",
+      "comments": [
+        "Quite Good"
+      ],
+      "id": 3
+    },
+    {
+      "Book": "laxmi chit funs",
+      "author": "dimapl",
+      "comments": [
+        "limesjed"
+      ],
+      "id": 4
+    },
+    {
+      "Book": "hdbjhe",
+      "author": "jehdbjeh",
+      "comments": [
+        "ehdbe"
+      ],
+      "id": 5
+    }
+  ]
+}
